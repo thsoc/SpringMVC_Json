@@ -20,11 +20,11 @@ public class JsonControllerTest {
 	}
 
 	/*
-	 * 备注：@RequestBody是根据页面的contentType参数决定的， 但是如果是键值对：key/value，要去掉@RequestBody注解，
+	 * 备注：@ResponseBody是根据页面的contentType参数决定的， 但是如果是键值对：key/value，要去掉@ResponseBody注解，
 	 * 会根据springmvc普通的http请求信息
 	 */
-	// 1.普通数据传输：@RequestBody注解：不能加；application/x-www-form-urlencoded：可以加上，也可以不加，
-	// 2.如果是json数据传入：@RequestBody：要加上，contentType:'application/json;charset=utf-8'：要加上
+	// 1.普通数据传输：@ResponseBody注解：不能加；application/x-www-form-urlencoded：可以加上，也可以不加，
+	// 2.如果是json数据传入：@ResponseBody：要加上，contentType:'application/json;charset=utf-8'：要加上
 	@RequestMapping(value = "JsonTest")
 	public @ResponseBody User JsonTest(User user) {
 		log.info("userinfo[username:" + user.getUsername() + ",password:" + user.getPassword() + "]");
